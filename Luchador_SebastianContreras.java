@@ -124,6 +124,19 @@ public class Luchador {
         System.out.println("ATK: " + atk);
         System.out.println("DEF: " + def);
         System.out.println("SPD: " + spd);
+        System.out.println();
+    }
+    
+    public String getName(){
+        return this.name;
+    }
+    
+    public String getFaction(){
+        return this.faction;
+    }
+    
+    public int getRank(){
+        return this.rank;
     }
     
 }
