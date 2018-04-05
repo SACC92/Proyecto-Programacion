@@ -8,6 +8,7 @@ import java.util.Random;
  * @author Sebastian
  */
 public class ObjetoEquipable {
+    private String name;
     private String attribute;
     private int bonus;
     private int rank;
@@ -23,6 +24,15 @@ public class ObjetoEquipable {
         attributes.add("DEF");
         attributes.add("SPD");
         return attributes;
+    }
+    
+    private ArrayList<String> nameList(){
+        ArrayList<String> names = new ArrayList<>();
+        names.add("Amuleto");
+        names.add("Arma");
+        names.add("Armadura");
+        names.add("Botas");
+        return names;
     }
     
     private String pickAttribute(ArrayList<String> attributes){
@@ -82,12 +92,13 @@ public class ObjetoEquipable {
     
     private void setStats(){
         attribute = pickAttribute(attributeList());
+        name = nameList().get(attributeList().indexOf(attribute));
         rank = pickRank();
         bonus = calcFinalBonus(pickBaseBonus(),rank);
     }
     
     public void showStats(){
-        System.out.println("Bonus de "+bonus+" a "+attribute+". Rango "+rank+"*");
+        System.out.println(name + " da bonus de "+bonus+" a "+attribute+". Rango "+rank+"*");
     }
     
     public int getRank(){
