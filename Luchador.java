@@ -121,14 +121,9 @@ public class Luchador {
         spd = calcFinalStat(pickBaseSPD(),rank);
     }
     
-    public void showStats(){
-        System.out.println(name + ", de los de " + faction);
-        System.out.println("Rank: " + rank + "*");
-        System.out.println("HP: " + hp);
-        System.out.println("ATK: " + atk);
-        System.out.println("DEF: " + def);
-        System.out.println("SPD: " + spd);
-        System.out.println();
+    @Override
+    public String toString(){
+        return name + ", de los de " + faction + "\nRank: " + rank + "*\nHP: " + hp + "\nATK: " + atk + "\nDEF: " + def + "\nSPD: " + spd +"\n";
     }
     
     public String getName(){

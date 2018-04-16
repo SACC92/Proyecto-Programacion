@@ -97,8 +97,9 @@ public class ObjetoEquipable {
         bonus = calcFinalBonus(pickBaseBonus(),rank);
     }
     
-    public void showStats(){
-        System.out.println(name + " da bonus de "+bonus+" a "+attribute+". Rango "+rank+"*");
+    @Override
+    public String toString(){
+        return name + " da bonus de "+ bonus + " a " + attribute + ". Rango " + rank +"*\n";
     }
     
     public int getRank(){

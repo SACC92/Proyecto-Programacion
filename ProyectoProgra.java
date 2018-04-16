@@ -18,7 +18,7 @@ public class ProyectoProgra {
      */
     public static void main(String[] args) {
         Luchador l = new Luchador();
-        l.showStats();
+        System.out.println(l);
         
         Random rnd = new Random();
         int sizeI = rnd.nextInt(25)+1;

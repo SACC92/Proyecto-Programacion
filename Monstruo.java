@@ -1,6 +1,7 @@
 package proyectoprogra;
 
 import java.util.Random;
+import java.util.ArrayList;
 
 /**
  *
@@ -11,6 +12,7 @@ public class Monstruo {
     private int atk;
     private int def;
     private int spd;
+    private String faction;
     
     public Monstruo(){
         crearMonstruo();
@@ -40,16 +42,32 @@ public class Monstruo {
         return baseSPD;
     }
     
+    private ArrayList<String> factionList(){
+        ArrayList<String> factions = new ArrayList<>();
+        factions.add("Fuego");
+        factions.add("Agua");
+        factions.add("Tierra");
+        return factions;
+    }
+    
+    private String pickFaction(ArrayList<String> factions){
+        Random picker = new Random();
+        int index = picker.nextInt(3);
+        String randFaction = factions.get(index);
+        return randFaction;
+    }
+    
     private void crearMonstruo(){
         hp = pickBaseHP();
         atk = pickBaseATK();
         def = pickBaseDEF();
         spd = pickBaseSPD();
+        faction = pickFaction(factionList());
     }
     
     private void crearObjetoDropeable(){
         ObjetoEquipable objeto = new ObjetoEquipable();
-        objeto.showStats();
+        System.out.println(objeto);
     }
     
 }

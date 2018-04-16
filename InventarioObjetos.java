@@ -29,7 +29,7 @@ public class InventarioObjetos {
     
     public void showObjeto(int index){
         if (0<index && index<=inventario.size()){
-            inventario.get(index-1).showStats();
+            System.out.println(inventario.get(index-1));
         }
         else{
             System.out.println("Fuera de rango\n");
@@ -40,7 +40,7 @@ public class InventarioObjetos {
         for (int i=0; i<inventario.size(); i++) {
             ObjetoEquipable objeto = inventario.get(i);
             System.out.print((i+1)+".- ");
-            objeto.showStats();
+            System.out.println(objeto);
         }
         System.out.println();
     }
@@ -50,7 +50,7 @@ public class InventarioObjetos {
         for (int i=0; i<inventario.size(); i++) {
             if (inventario.get(i).getRank()==rank){
                 count += 1;
-                inventario.get(i).showStats();
+                System.out.println(inventario.get(i));
             }
         }
         if (count == 0){

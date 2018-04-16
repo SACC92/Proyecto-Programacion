@@ -33,7 +33,7 @@ public class InventarioLuchadores {
     
     public void showLuchador(int index){
         if (0<index && index<=inventario.size()){
-            inventario.get(index-1).showStats();
+            System.out.print(inventario.get(index-1));
         }
         else{
             System.out.println("Fuera de rango\n");
