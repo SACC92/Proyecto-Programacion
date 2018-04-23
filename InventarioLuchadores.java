@@ -13,6 +13,10 @@ public class InventarioLuchadores {
         System.out.println("Dispone de " + inventario.size() + " luchadores en su inventario\n");
     }
     
+    public int size(){
+        return inventario.size();
+    }
+    
     public void addLuchador(Luchador luchador){
         if (inventario.size()<maximo){
             inventario.add(luchador);

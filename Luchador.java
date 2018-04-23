@@ -93,9 +93,9 @@ public class Luchador {
     
     private ArrayList<String> factionList(){
         ArrayList<String> factions = new ArrayList<>();
-        factions.add("Fuego");
         factions.add("Agua");
-        factions.add("Tierra");
+        factions.add("Fuego");
+        factions.add("Planta");
         return factions;
     }
     
@@ -128,6 +128,22 @@ public class Luchador {
     
     public String getName(){
         return this.name;
+    }
+    
+    public int getHP(){
+        return this.hp;
+    }
+    
+    public int getATK(){
+        return this.atk;
+    }
+    
+    public int getDEF(){
+        return this.def;
+    }
+    
+    public int getSPD(){
+        return this.spd;
     }
     
     public String getFaction(){

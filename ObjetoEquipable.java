@@ -102,6 +102,18 @@ public class ObjetoEquipable {
         return name + " da bonus de "+ bonus + " a " + attribute + ". Rango " + rank +"*\n";
     }
     
+    public String getName(){
+        return this.name;
+    }
+    
+    public String getAttribute(){
+        return this.attribute;
+    }
+    
+    public int getBonus(){
+        return this.bonus;
+    }
+    
     public int getRank(){
         return this.rank;
     }
