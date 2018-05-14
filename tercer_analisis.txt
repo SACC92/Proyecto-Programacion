@@ -1,0 +1,1 @@
+Se elegieron las clases Personaje e Inventario como clases padre. Personaje como padre de Luchador y Monstruo, pues ambas clases comparten varios atributos y metodos. De la misma forma se consideró Inventario como clase padre de InventarioLuchadores e InventarioObjetos, por sus similitudes.
