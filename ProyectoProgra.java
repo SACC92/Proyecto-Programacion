@@ -41,7 +41,7 @@ public class ProyectoProgra {
         inventario.howMany();
         int posI = rnd.nextInt(sizeI)+1;
         System.out.println("Posición " + posI + ":");
-        inventario.showLuchador(posI);
+        inventario.show(posI);
         inventario.filterFaction("Fuego");
         int rank = rnd.nextInt(5)+1;
         System.out.println("Rango " + rank + "*");
@@ -50,7 +50,7 @@ public class ProyectoProgra {
         objetos.showInventario();
         int posO = rnd.nextInt(sizeO)+1;
         System.out.println("Posición " + posO + ":");
-        objetos.showObjeto(posO);
+        objetos.show(posO);
         rank = rnd.nextInt(5)+1;
         System.out.println("Rango " + rank + "*");
         objetos.filterRank(rank);

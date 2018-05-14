@@ -5,9 +5,14 @@ import java.util.ArrayList;
  *
  * @author Sebastian
  */
-public class InventarioObjetos {
-    private int maximo = 10;
-    private ArrayList<ObjetoEquipable> inventario = new ArrayList<>();
+public class InventarioObjetos extends Inventario{
+    
+    private ArrayList<ObjetoEquipable> inventario;
+    
+    public InventarioObjetos(){
+        maximo = 10;
+        inventario = new ArrayList();
+    }
     
     public void addObjeto(ObjetoEquipable objeto){
         if (inventario.size()<maximo){
@@ -18,24 +23,7 @@ public class InventarioObjetos {
         }
     }
     
-    public void removeObjeto(int index){
-        if (0<index && index<=inventario.size()){
-            inventario.remove(index-1);
-        }
-        else{
-            System.out.println("Fuera de rango\n");
-        }
-    }
-    
-    public void showObjeto(int index){
-        if (0<index && index<=inventario.size()){
-            System.out.println(inventario.get(index-1));
-        }
-        else{
-            System.out.println("Fuera de rango\n");
-        }
-    }
-    
+    @Override
     public void showInventario(){
         for (int i=0; i<inventario.size(); i++) {
             ObjetoEquipable objeto = inventario.get(i);
@@ -45,6 +33,17 @@ public class InventarioObjetos {
         System.out.println();
     }
     
+    @Override
+    public void show(int index){
+        if (0<index && index<=inventario.size()){
+            System.out.print(inventario.get(index-1));
+        }
+        else{
+            System.out.println("Fuera de rango\n");
+        }
+    }
+    
+    @Override
     public void filterRank(int rank){
         int count = 0;
         for (int i=0; i<inventario.size(); i++) {

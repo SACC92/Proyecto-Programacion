@@ -7,12 +7,7 @@ import java.util.ArrayList;
  *
  * @author Sebastian
  */
-public class Monstruo {
-    private int hp;
-    private int atk;
-    private int def;
-    private int spd;
-    private String faction;
+public class Monstruo extends Personaje{
     
     public Monstruo(){
         crearMonstruo();
@@ -42,21 +37,6 @@ public class Monstruo {
         return baseSPD;
     }
     
-    private ArrayList<String> factionList(){
-        ArrayList<String> factions = new ArrayList<>();
-        factions.add("Agua");
-        factions.add("Fuego");
-        factions.add("Planta");
-        return factions;
-    }
-    
-    private String pickFaction(ArrayList<String> factions){
-        Random picker = new Random();
-        int index = picker.nextInt(3);
-        String randFaction = factions.get(index);
-        return randFaction;
-    }
-    
     private void crearMonstruo(){
         hp = pickBaseHP();
         atk = pickBaseATK();
@@ -68,26 +48,6 @@ public class Monstruo {
     private void crearObjetoDropeable(){
         ObjetoEquipable objeto = new ObjetoEquipable();
         System.out.println(objeto);
-    }
-    
-    public int getHP(){
-        return this.hp;
-    }
-    
-    public int getATK(){
-        return this.atk;
-    }
-    
-    public int getDEF(){
-        return this.def;
-    }
-    
-    public int getSPD(){
-        return this.spd;
-    }
-    
-    public String getFaction(){
-        return this.faction;
     }
     
 }

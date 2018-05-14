@@ -59,8 +59,8 @@ public class Batalla {
         return dmg;
     }
     
-    private ArrayList<Integer> atkOrder(ArrayList<Luchador> team, Monstruo enemy){
+    //private ArrayList<Integer> atkOrder(ArrayList<Luchador> team, Monstruo enemy){
         
-    }
+    //}
     
 }

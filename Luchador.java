@@ -5,14 +5,9 @@ import java.util.ArrayList;
  *
  * @author Sebastian
  */
-public class Luchador {
+public class Luchador extends Personaje{
     private String name;
-    private int hp;
-    private int atk;
-    private int def;
-    private int spd;
     private int rank;
-    private String faction;
     
     public Luchador(){
         setStats();
@@ -91,21 +86,6 @@ public class Luchador {
         return randRank;
     }
     
-    private ArrayList<String> factionList(){
-        ArrayList<String> factions = new ArrayList<>();
-        factions.add("Agua");
-        factions.add("Fuego");
-        factions.add("Planta");
-        return factions;
-    }
-    
-    private String pickFaction(ArrayList<String> factions){
-        Random picker = new Random();
-        int index = picker.nextInt(3);
-        String randFaction = factions.get(index);
-        return randFaction;
-    }
-    
     private int calcFinalStat(int baseStat, int rank){
         int finalStat = baseStat*rank;
         return finalStat;
@@ -128,26 +108,6 @@ public class Luchador {
     
     public String getName(){
         return this.name;
-    }
-    
-    public int getHP(){
-        return this.hp;
-    }
-    
-    public int getATK(){
-        return this.atk;
-    }
-    
-    public int getDEF(){
-        return this.def;
-    }
-    
-    public int getSPD(){
-        return this.spd;
-    }
-    
-    public String getFaction(){
-        return this.faction;
     }
     
     public int getRank(){

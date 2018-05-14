@@ -5,9 +5,14 @@ import java.util.ArrayList;
  *
  * @author Sebastian
  */
-public class InventarioLuchadores {
-    private int maximo = 25;
-    private ArrayList<Luchador> inventario = new ArrayList<>();
+public class InventarioLuchadores extends Inventario{
+    
+    private ArrayList<Luchador> inventario;
+    
+    public InventarioLuchadores(){
+        maximo =25;
+        inventario  = new ArrayList();
+    }
     
     public void howMany(){
         System.out.println("Dispone de " + inventario.size() + " luchadores en su inventario\n");
@@ -26,16 +31,8 @@ public class InventarioLuchadores {
         }
     }
     
-    public void removeLuchador(int index){
-        if (0<index && index<=inventario.size()){
-            inventario.remove(index-1);
-        }
-        else{
-            System.out.println("Fuera de rango\n");
-        }
-    }
-    
-    public void showLuchador(int index){
+    @Override
+    public void show(int index){
         if (0<index && index<=inventario.size()){
             System.out.print(inventario.get(index-1));
         }
@@ -44,6 +41,7 @@ public class InventarioLuchadores {
         }
     }
     
+    @Override
     public void showInventario(){
         for (int i=0; i<inventario.size(); i++) {
             Luchador luchador = inventario.get(i);
@@ -52,6 +50,7 @@ public class InventarioLuchadores {
         System.out.println();
     }
     
+    @Override
     public void filterRank(int rank){
         int count = 0;
         for (int i=0; i<inventario.size(); i++) {
