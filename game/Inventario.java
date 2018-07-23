@@ -15,14 +15,7 @@ public abstract class Inventario {
     protected int maximo;
     protected ArrayList inventario;
     
-    public void remove(int index){
-        if (0<index && index<=inventario.size()){
-            inventario.remove(index-1);
-        }
-        else{
-            System.out.println("Fuera de rango\n");
-        }
-    }
+    public abstract void remove(int index);
     
     public abstract void show(int index);
     

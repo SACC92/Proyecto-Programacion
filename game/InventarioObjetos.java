@@ -24,6 +24,11 @@ public class InventarioObjetos extends Inventario{
     }
     
     @Override
+    public void remove(int index){
+        inventario.remove(index);
+    }
+    
+    @Override
     public void showInventario(){
         for (int i=0; i<inventario.size(); i++) {
             ObjetoEquipable objeto = inventario.get(i);

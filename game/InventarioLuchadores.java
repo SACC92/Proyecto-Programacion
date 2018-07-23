@@ -1,7 +1,6 @@
 package game;
 
 import java.util.ArrayList;
-import java.util.Random;
 /**
  *
  * @author Sebastian
@@ -30,6 +29,11 @@ public class InventarioLuchadores extends Inventario{
         else{
             System.out.println("Inventario lleno. Intente borrar luchadores");
         }
+    }
+    
+    @Override
+    public void remove(int index){
+        inventario.remove(index);
     }
     
     @Override
@@ -80,10 +84,12 @@ public class InventarioLuchadores extends Inventario{
         System.out.println();
     }
     
+    public Luchador get(int index){
+        return inventario.get(index);
+    }
+    
     public void randomInventario(){
-        Random rnd = new Random();
-        int sizeI = rnd.nextInt(25)+1;
-        for (int i=0; i<sizeI; i++){
+        for (int i=0; i<25; i++){
             Luchador luchador = new Luchador();
             this.addLuchador(luchador);
         }

@@ -22,7 +22,7 @@ public class Batalla {
         rawDiceLuck = dado.nextInt(8)-dado.nextInt(6);
         setDiceLuck(rawDiceLuck);
         ArrayList<Integer> order = atkOrder(team, enemy);
-        battle(partySize, order);
+        battle(order);
     }
     
     private void fillTeam(ArrayList<Luchador> inventario, int partySize){
@@ -117,23 +117,35 @@ public class Batalla {
         return order;
     }
     
-    private void battle(int partySize, ArrayList<Integer> order){
+    private void battle(ArrayList<Integer> order){
         Luchador fighter;
         while(team.size() > 0 && enemy.getHP() > 0){
-            for (int i=0; i<partySize+1; i++){
+            for (int i=0; i<order.size(); i++){
                 if(order.get(i)<0){
                     fighter = team.get(0);
                     fighter.setHP(fighter.getHP()- calcDamage(enemy.getATK(),enemy.getFaction(),fighter.getDEF(),fighter.getFaction(),enemyDiceLuck));
                     if (fighter.getHP()==0){
                         team.remove(0);
+                        order.remove(Integer.valueOf(0));
+                        for (int j=0; j<order.size(); j++){
+                            order.set(j, order.get(j)-1);
+                        }
                     }
                 }
                 else{
-                    fighter = team.get(i);
+                    fighter = team.get(order.get(i));
                     enemy.setHP(enemy.getHP()- calcDamage(fighter.getATK(),fighter.getFaction(),enemy.getDEF(),enemy.getFaction(),teamDiceLuck));
                 }
             }
         }
     }
     
+    private String endBattle(){
+        if (team.isEmpty()){
+            return "Perdiste";
+        }
+        else {
+            return "Ganaste";
+        }
+    }
 }
